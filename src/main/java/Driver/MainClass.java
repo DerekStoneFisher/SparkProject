@@ -55,7 +55,7 @@ public class MainClass {
                 User u = mapper.readValue(request.body(), User.class);
                 if (!u.isValid()) {
                     response.status(400);
-                    return "Correct the fields";
+                    return "Correct fields";
                 }
                 if(mod.checkUser(u.getId())) {
                     int id = mod.createUser(u.getId(), u.getFirstName(), u.getMiddleName(), u.getLastName(),
